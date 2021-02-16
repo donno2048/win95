@@ -1,0 +1,19 @@
+<!doctype html>
+<script src="js-dos.js"></script>
+<body>
+    <center>
+        <canvas id="jsdos"></canvas>
+        <br/>
+        <button onclick="ci.fullscreen()">Fullscreen</button>
+    </center>
+    <script>
+        Dos(document.getElementById("jsdos"), { autolock: true, onprogress: (stage, total, loaded) => {document.title = Math.floor(loaded * 99 / total) + "%"}}).ready((fs, main) => {
+            fs.extract("win95.zip").then(() => {
+                main(["-c", "imgmount d c.img", "-c", "boot c.img"]).then((ci) => {
+                    window.ci = ci;
+                    ci.simulateKeyPress(32);
+                })
+            });
+        });
+    </script>
+</body>
