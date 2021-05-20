@@ -1,5 +1,7 @@
 # How to run Windows™ 95© on the web
 
+You can view the [online demo](https://donno2048.github.io/win95/)
+
 ## Setup
 
 - Download and install [dosbox](https://sourceforge.net/projects/dosbox/files/latest/download) to _C:\dosbox_
