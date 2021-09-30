@@ -17,6 +17,9 @@
             height: 30px;
             background-color: green;
         }
+        button {
+            visibility: hidden;
+        }
     </style>
         <div id="Progress">
             <div id="Bar"></div>
@@ -32,6 +35,7 @@
                 document.getElementById("Bar").style.height = "0px";
                 main(["-c", "imgmount d c.img", "-c", "boot c.img"]).then((ci) => {
                     window.ci = ci;
+                    document.getElementsByTagName("button")[0].style.visibility = 'initial';
                     ci.simulateKeyPress(32);
                 })
             });
