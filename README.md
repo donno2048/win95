@@ -58,5 +58,3 @@ You can view the [online demo](https://donno2048.github.io/win95/)
     ```
 
 1. Zip _c.img_ from the _DOSBox_ folder to a zip file named _win95.zip_ and put it in the same directory as the files in this folder, then run a local testing "site" using: `python -m SimpleHTTPServer` (you need Python to do that) and open http://localhost:8000/
-
-You can see an implementation of win95 here: https://github.com/username669/windows95
