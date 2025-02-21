@@ -3,13 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="description" content="Run Windows 95 online">
+        <link rel="manifest" href="manifest.json">
         <title>Win95</title>
         <script src="js-dos.js"></script>
     </head>
     <body>
         <style>
             body {
-                background-image: url('bliss.jpg');
+                background-image: url('bliss.png');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -36,6 +39,7 @@
             <button onclick="ci.fullscreen()">Fullscreen</button>
         </center>
         <script>
+            (() => navigator?.serviceWorker?.register?.('sw.js'))();
             Dos(document.getElementById("jsdos"), { autolock: true, onprogress: (stage, total, loaded) => {document.getElementById("Bar").style.width = Math.floor(loaded * 99 / total) + "%"}}).ready((fs, main) => {
                 fs.extract("win95.zip").then(() => {
                     document.getElementById("Bar").style.height = "0px";

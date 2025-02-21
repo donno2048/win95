@@ -1,0 +1,21 @@
+{
+    "name": "win95",
+    "short_name": "win95",
+    "start_url": "./",
+    "icons": [
+        {
+            "src": "bliss.png",
+            "sizes": "4059x3264",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "bliss.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "display": "fullscreen",
+    "orientation": "landscape"
+}
