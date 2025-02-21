@@ -1,6 +1,6 @@
 self.addEventListener("install", e => e.waitUntil(caches.open("assets").then(cache => cache.addAll([
     "win95.zip",
-    "bliss.jpg",
+    "bliss.png",
     "js-dos.js",
     "index.html",
     "wdosbox.js",
@@ -8,4 +8,4 @@ self.addEventListener("install", e => e.waitUntil(caches.open("assets").then(cac
     "wdosbox.wasm.js",
 ]))));
 
-self.addEventListener("fetch", e => e.respondWith(caches.match(e.request) || fetch(e.request)));
+self.addEventListener("fetch", e => e.respondWith(caches.match(e.request).then(res => res || fetch(e.request))));
